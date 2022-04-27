@@ -3,7 +3,13 @@ make
 echo "Loading kernel module ..."
 sudo insmod hrtimer_mod.ko
 
-sleep 10
+count=1
+while [ $count -le 10 ]
+do
+	sleep 1
+    echo "$count second(s)"	
+    count=$(( $count + 1 ))
+done
 
 echo "Removing kernel module ..."
 sudo rmmod hrtimer_mod
