@@ -18,7 +18,7 @@ static void __exit hrtimer_mod_exit(void);
 
 static enum hrtimer_restart test_hrtimer_handler(struct hrtimer *timer)
 {
-    pr_info("test_hrtimer_handler: %u\n", ++loop);
+    pr_info("hrtimer_mod: %u\n", ++loop);
     hrtimer_forward_now(&test_hrtimer, ms_to_ktime(sampling_period_ms));
     return HRTIMER_RESTART;
 }
