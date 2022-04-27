@@ -9,6 +9,6 @@ echo "Removing kernel module ..."
 sudo rmmod hrtimer_mod
 
 echo "dmesg output"
-sudo dmesg | tail -10
+sudo dmesg | tail -12
 
 make clean
