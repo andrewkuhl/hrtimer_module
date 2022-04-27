@@ -40,5 +40,5 @@ static void __exit hrtimer_mod_exit(void)
     return;
 }
 
-module_init(hrtimer_mod);
-module_exit(hrtimer_mod);
+module_init(hrtimer_mod_init);
+module_exit(hrtimer_mod_exit);
