@@ -12,6 +12,10 @@ static struct hrtimer test_hrtimer;
 static u64 sampling_period_ms = 1000; 
 static u32 loop = 0;
 
+static enum hrtimer_restart test_hrtimer_handler(struct hrtimer *timer);
+static int __init hrtimer_mod_init(void);
+static void __exit hrtimer_mod_exit(void);
+
 static enum hrtimer_restart test_hrtimer_handler(struct hrtimer *timer)
 {
     pr_info("test_hrtimer_handler: %u\n", ++loop);
