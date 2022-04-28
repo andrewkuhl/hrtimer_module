@@ -2,19 +2,18 @@ make
 
 echo "Loading kernel module ..."
 sudo insmod hrtimer_mod.ko
+sudo dmesg | tail -1
 
 count=1
 while [ $count -le 10 ]
 do
 	sleep 1
-    echo "$count second(s)"	
+    sudo dmesg | tail -1
     count=$(( $count + 1 ))
 done
 
 echo "Removing kernel module ..."
 sudo rmmod hrtimer_mod
-
-echo "dmesg output"
-sudo dmesg | tail -12
+sudo dmesg | tail -1
 
 make clean
